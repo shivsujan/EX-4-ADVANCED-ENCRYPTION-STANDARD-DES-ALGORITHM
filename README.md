@@ -9,6 +9,43 @@
   3. It has a fixed block size of 128 bits, and a key size of 128, 192, or 256 bits. 
   4. AES operates on a 4 × 4 column-major order array of bytes, termed the state
 
-## PROGRAM: 
+## PROGRAM:
+
+```
+NAME : SHIV SUJAN S R
+REG.NO : 212223040065
+```
+```
+#include <stdio.h>
+#include <string.h>
+
+
+  void xor_encrypt_decrypt(char *input, char *key) {
+int input_len = strlen(input);
+int key_len = strlen(key);
+
+for (int i = 0; i < input_len; i++) {
+    input[i] = input[i] ^ key[i % key_len]; // XOR encryption
+}
+}
+
+int main() {
+char url[] = "https://lms2.cse.saveetha.in";
+char key[] = "secretkey"; // Simple key for XOR encryption
+
+printf("Original URL: %s\n", url);
+
+xor_encrypt_decrypt(url, key);
+printf("Encrypted URL: %s\n", url);
+
+xor_encrypt_decrypt(url, key);
+printf("Decrypted URL: %s\n", url);
+
+return 0;
+}
+```
 ## OUTPUT:
+
+![Screenshot 2024-10-06 222115](https://github.com/user-attachments/assets/c87d5e7e-9aa4-4dea-b356-0b95e54e7cdc)
+
 ## RESULT: 
